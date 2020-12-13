@@ -10,11 +10,11 @@ This will involve designing a **pyswahili Intepreter** on top of Python to parse
 
 The Goal now is to support the following features for the language
 
-- [] Simple Arithmetic Operation
-- [] conditionals  
-- [] loops
-- [] Functions 
-- [] Object Oriented 
+- [ ] Simple Arithmetic Operation
+- [ ] conditionals  
+- [ ] loops
+- [ ] Functions 
+- [ ] Object Oriented 
 
 
 *The journey has just began*
