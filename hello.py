@@ -1,6 +1,7 @@
-your_age = 12
+umri = ingiza('Umri wako: ')
+umri = int(umri)
 
-kama your_age < 18:
+kama umri < 18:
   andika('bado kijana mdogo')
 zaidi:
   andika('sasa waweza date')

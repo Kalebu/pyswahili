@@ -8,6 +8,7 @@ class pyswahili(object):
         self.swahili_code = sys.argv[1]
 
         self.sw_to_en = {
+            'ingiza': 'input',
             'kama':'if',
             'endapo': 'for',
             'imo kwenye': 'in',
