@@ -30,9 +30,10 @@ implemented a small piece of code for the initial node(waiting heavily modificat
 How to run a pyswahili code 
 
 ```Python
-your_age = 18
+umri = ingiza('Umri wako: ')
+umri = int(umri)
 
-kama your_age < 18:
+kama umri < 18:
   andika('bado kijana mdogo')
 zaidi:
   andika('sasa waweza date')
