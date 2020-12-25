@@ -4,18 +4,15 @@ import json
 class PySwahili(object):
     def __init__(self):
         arguments = list(sys.argv)
-        print(arguments)
         if len(arguments)>1:
             self.swahili_code = sys.argv[1]
         self.sw_to_en = self.load_keyword_dictionary()
-        print(self.sw_to_en)
 
 
     @staticmethod
     def load_keyword_dictionary():
         try:
             with open('sw_to_english.json') as dictionary:
-                print('loading dictionary')
                 return json.load(dictionary)
         except FileNotFoundError:
             print('Make sure json keyword dictionary is on your current directory')
@@ -36,10 +33,11 @@ class PySwahili(object):
 
     
     def convert_to_english(self, sw_python_code):
-        sw_keywords = list(self.sw_to_en.keys())
+        sw_to_en = self.sw_to_en['keywords']
+        sw_keywords = list(sw_to_en.keys())
         for sw_keyword in sw_keywords:
             if sw_keyword in sw_python_code:
-                sw_python_code = sw_python_code.replace(sw_keyword, self.sw_to_en[sw_keyword])
+                sw_python_code = sw_python_code.replace(sw_keyword, sw_to_en[sw_keyword])
         return sw_python_code
 
 
