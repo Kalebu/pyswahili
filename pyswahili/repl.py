@@ -1,7 +1,6 @@
 import json
 import sys
 import code 
-import click
 from swahili_node import PySwahili
 
 
@@ -31,6 +30,9 @@ class PySwahili_Repl:
             code.compile_command(line_of_code)
             return True 
         except Exception as bug:
+            trimmed_line_of_code = line_of_code.replace(' ', '')
+            if trimmed_line_of_code == 'else:':
+                return True
             print(bug)
             return False
 

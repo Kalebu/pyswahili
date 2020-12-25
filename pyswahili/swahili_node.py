@@ -1,18 +1,19 @@
+import os
 import sys
 import json 
 
 class PySwahili(object):
-    def __init__(self):
-        arguments = list(sys.argv)
-        if len(arguments)>1:
-            self.swahili_code = sys.argv[1]
+    def __init__(self, filename=None):
+        if filename:
+            self.swahili_code = filename
         self.sw_to_en = self.load_keyword_dictionary()
 
 
     @staticmethod
     def load_keyword_dictionary():
         try:
-            with open('sw_to_english.json') as dictionary:
+            path_to_dict = os.path.join(os.getcwd(), 'sw_to_english.json')
+            with open(path_to_dict) as dictionary:
                 return json.load(dictionary)
         except FileNotFoundError:
             print('Make sure json keyword dictionary is on your current directory')

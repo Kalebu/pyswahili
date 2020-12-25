@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 setup(
@@ -14,11 +14,16 @@ setup(
     author="Jordan Kalebu",
     author_email="isaackeinstein@gmail.com",
     license="MIT",
-    packages=['pyswahili'],
-    include_package_data = True
+    packages=find_packages(),
+    include_package_data=True,
     install_requires=[
         'click',
     ],
+    
+    entry_points='''
+        [console_scripts]
+        pyswahili=pyswahili.cli:cli
+        ''', 
 
-    python_requires='>=3.6'
+    python_requires='>=3.5'
 )
