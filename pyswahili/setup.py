@@ -14,16 +14,15 @@ setup(
     author="Jordan Kalebu",
     author_email="isaackeinstein@gmail.com",
     license="MIT",
-    packages=find_packages(),
+    package = ['PySwahili'],
     include_package_data=True,
+    package_data = {'Swahili': ['sw_to_english.json', '*.py']},
     install_requires=[
         'click',
     ],
     
     entry_points='''
         [console_scripts]
-        pyswahili=pyswahili.cli:cli
+        pyswahili=Swahili.cli:cli
         ''', 
-
-    python_requires='>=3.5'
 )

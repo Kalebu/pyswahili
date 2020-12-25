@@ -1,12 +1,9 @@
+import os
 import click
-from swahili_node import PySwahili
-from repl import PySwahili_Repl
+from Swahili.swahili_node import PySwahili
+from Swahili.repl import PySwahili_Repl
 
-@click.group()
-def cli():
-    pass
-
-@cli.command()
+@click.command()
 @click.argument('filename', type=str, default='')
 def cli(filename):
     if filename:

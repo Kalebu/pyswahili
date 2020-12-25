@@ -1,4 +1,4 @@
-{ "keywords": {
+dictionary = { "keywords": {
                 "tupu": "None",
                 "Kweli": "True",
                 "SioKweli": "False",

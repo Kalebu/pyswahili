@@ -1,0 +1,14 @@
+setup.py
+pyswahili/__init__.py
+pyswahili/repl.py
+pyswahili/swahili_node.py
+pyswahili/temp.py
+pyswahili.egg-info/PKG-INFO
+pyswahili.egg-info/SOURCES.txt
+pyswahili.egg-info/dependency_links.txt
+pyswahili.egg-info/entry_points.txt
+pyswahili.egg-info/requires.txt
+pyswahili.egg-info/top_level.txt
+pyswahili/scripts/__init__.py
+pyswahili/scripts/cli.py
+pyswahili/scripts/demo.py

@@ -2,7 +2,7 @@ import json
 import sys
 import code
 import platform
-from swahili_node import PySwahili
+from Swahili.swahili_node import PySwahili
 
 
 
@@ -13,7 +13,6 @@ class PySwahili_Repl:
         self.console = code.InteractiveConsole()
         self.intepreter = code.InteractiveInterpreter()
         self.newline = '\n'
-        self.show_output = '{};print({})'
 
     @staticmethod
     def remove_identation(line_of_code):
@@ -97,12 +96,12 @@ class PySwahili_Repl:
                                 print(evaluated)
                             continue
                     eval(compile(command, '<string>', 'exec'))
-
-                    #self.console.runcode(command)
                     continue
             except KeyboardInterrupt:
                 sys.exit()
-            else:
+            
+            except Exception as bug:
+                print(bug)
                 continue
 
 if __name__ == '__main__':

@@ -12,8 +12,8 @@ class PySwahili(object):
     @staticmethod
     def load_keyword_dictionary():
         try:
-            path_to_dict = os.path.join(os.getcwd(), 'sw_to_english.json')
-            with open(path_to_dict) as dictionary:
+            print(os.listdir())
+            with open('sw_to_english.json') as dictionary:
                 return json.load(dictionary)
         except FileNotFoundError:
             print('Make sure json keyword dictionary is on your current directory')
