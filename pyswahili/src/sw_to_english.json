@@ -1,0 +1,17 @@
+{
+            "tupu": "None",
+            "Kweli": "True",
+            "SioKweli": "False",
+            "na": "and",
+            "vunja": "break",
+            "endelea": "continue",
+            "rudisha": "return",
+            "ingiza": "input",
+            "kama":"if",
+            "endapo": "for",
+            "imokwenye": "in",
+            "wakati": "while",
+            "andika":"print",
+            "zaidi": "else",
+            "kundi": "def"
+}
