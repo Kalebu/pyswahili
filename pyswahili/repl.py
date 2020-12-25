@@ -1,6 +1,7 @@
 import json
 import sys
-import code 
+import code
+import platform
 from swahili_node import PySwahili
 
 
@@ -11,6 +12,8 @@ class PySwahili_Repl:
         self.block_keywords = list(self.translator.sw_to_en['block_keywords'].values())
         self.console = code.InteractiveConsole()
         self.intepreter = code.InteractiveInterpreter()
+        self.newline = '\n'
+        self.show_output = '{};print({})'
 
     @staticmethod
     def remove_identation(line_of_code):
@@ -36,6 +39,22 @@ class PySwahili_Repl:
             print(bug)
             return False
 
+    def is_eval(self, line_of_code, variables):
+        restricted = ['command', 'self', 'specifics']
+        try:
+            for var, value in variables.items():
+                if all(var!=r_var for r_var in restricted):
+                    assign_expression = '''{}={}'''.format(var, value)
+                    eval(compile(assign_expression, '<string>', 'exec'))
+            
+            output = eval(compile(line_of_code, '<string>', 'eval'))
+            if not line_of_code.startswith('print'):
+                return output
+            return True 
+        except Exception as bug:
+            #print(bug)
+            return False
+
     def read_user_input(self):
         try:
             user_input = ""
@@ -58,14 +77,28 @@ class PySwahili_Repl:
         except Exception as bug:
             print(bug)
 
+    @staticmethod
+    def load_system_specification():
+        specification = platform.uname()
+        specification = 'Pyswahili 0.0.1 on {} \nBy @KalebuJordan'.format(specification.system)
+        return specification
 
     def repl(self):
-        print('Pyswahili 0.0.1 by @kalebujordan')
+        specifics = self.load_system_specification()
+        print(specifics)
         while True:
             try:
                 command = self.read_user_input()
                 if command:
-                    repr(self.console.runcode(command))
+                    if not self.newline in command:
+                        evaluated = self.is_eval(command, locals())
+                        if evaluated:
+                            if evaluated !=True:
+                                print(evaluated)
+                            continue
+                    eval(compile(command, '<string>', 'exec'))
+
+                    #self.console.runcode(command)
                     continue
             except KeyboardInterrupt:
                 sys.exit()
