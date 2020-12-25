@@ -1,1 +1,0 @@
-andika('All is well')
