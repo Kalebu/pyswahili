@@ -38,6 +38,7 @@ If you're Window user I would recommed running command prompt(cmd) with admistra
 
 ```powershell
 $ git clone https://github.com/Kalebu/pyswahili
+$ cd pyswahili
 $ pip install -e pyswahili
 ```
 
@@ -115,6 +116,13 @@ Namba yoyote : 8
 If you want to see all the supported keywords by pyswahili you see all of them by viewing 
 this [Pyswahili supported keywords](https://github.com/Kalebu/pyswahili/blob/main/pyswahili/Swahili/sw_to_en.py),
 Keywords are not final so whenever you see a need for a keyword change feel free to reach me directly.
+
+
+## To Do 
+
+- [] Making sure only keywords are replaced 
+- [] Improving documentation 
+- [] 
 
 
 # Give it a star 
