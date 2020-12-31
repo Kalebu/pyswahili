@@ -26,16 +26,37 @@ class PySwahili_Repl:
     def is_blocky(self, line_of_code):
         return any([line_of_code.startswith(keyword) for keyword in self.block_keywords]) and line_of_code.endswith(':')
 
+
+    def is_else(self, line_of_code):
+        try:
+            trimmed_line_of_code = line_of_code.replace(' ', '')
+            if trimmed_line_of_code == 'else':
+                return True
+            return
+        except:
+            return
+            
+    def is_return(self, line_of_code):
+        try:
+            stripped_line_of_code = line_of_code.strip()
+            if stripped_line_of_code.startswith('return '):
+                return True
+            return
+        except:
+            return 
+
+
     def is_valid(self, line_of_code):
+        
+        exceptional_keywords = ['else', 'return', 'yield']
+
         try:
             line_of_code = self.remove_identation(line_of_code)
             code.compile_command(line_of_code)
             return True 
         except Exception as bug:
-            trimmed_line_of_code = line_of_code.replace(' ', '')
-            if trimmed_line_of_code == 'else:':
+            if self.is_else(line_of_code) or self.is_return(line_of_code):
                 return True
-            print(bug)
             return False
 
     def is_eval(self, line_of_code, variables):
@@ -51,7 +72,8 @@ class PySwahili_Repl:
                 return output
             return True 
         except Exception as bug:
-            #print(bug)
+            print(bug)
+            print('mmh')
             return False
 
     def read_user_input(self):
