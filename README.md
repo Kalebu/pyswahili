@@ -74,6 +74,15 @@ umri wako is 12
 12  is andmba shufwa
 ```
 
+
+#### Functions in pyswahili
+
+
+```python
+
+
+```
+
 If you're looking carefully the word *namba* changed to *andmba* this due to pyswahili accidentally replaced *na* with *and*, 
 so still it's not perfect perhaps the basic feature are working properly.
 
@@ -120,10 +129,22 @@ Keywords are not final so whenever you see a need for a keyword change feel free
 
 ## To Do 
 
-- [] Making sure only keywords are replaced 
-- [] Improving documentation 
-- [] 
 
+- [x] Making sure only keywords are replaced 
+- [] Improving documentation 
+- [] fixing REPL bugs
+- [] Starter string based logo
+- [] Supporting the Module structure
+
+### Ensuring Keywords are replaced
+
+The current approach just replace the keywords in the whole python source code string, but the methods is error-prone 
+since it also replaces user defined strings therefore we have to find a way whereby only keywords are being replaced, 
+
+This can be achieved by using Python builtin **lexical scanner** tokenize for python source code, which is capable of breaking the 
+python source code into pieces strings with their **type** (NAME, OP, NUMBER, NEWLINE, IDENT) and so on.
+
+More documentation abouut tokenize can be found on its [official documentation](https://docs.python.org/3/library/tokenize.html)
 
 # Give it a star 
 
