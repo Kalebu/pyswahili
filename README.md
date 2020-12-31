@@ -131,10 +131,10 @@ Keywords are not final so whenever you see a need for a keyword change feel free
 
 
 - [x] Making sure only keywords are replaced 
-- [] Improving documentation 
-- [] fixing REPL bugs
-- [] Starter string based logo
-- [] Supporting the Module structure
+- [ ] Improving documentation 
+- [ ] fixing REPL bugs
+- [ ] Starter string based logo
+- [ ] Supporting the Module structure
 
 ### Ensuring Keywords are replaced
 
