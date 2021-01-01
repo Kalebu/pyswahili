@@ -5,75 +5,78 @@ import platform
 from Swahili.swahili_node import PySwahili
 
 
-
 class PySwahili_Repl:
     def __init__(self):
         self.translator = PySwahili()
-        self.block_keywords = list(self.translator.sw_to_en['block_keywords'].values())
+        self.block_keywords = list(self.translator.sw_to_en["block_keywords"].values())
         self.console = code.InteractiveConsole()
         self.intepreter = code.InteractiveInterpreter()
-        self.newline = '\n'
+        self.newline = "\n"
 
     @staticmethod
-    def remove_identation(line_of_code):
+    def remove_identation(line_of_code, return_number=False):
+        count = 0
         while True:
-            if line_of_code.startswith('\t'):
+            if line_of_code.startswith("\t"):
                 line_of_code = line_of_code[1:]
+                count += 1
                 continue
             break
-        return line_of_code
+
+        if return_number:
+            return count
+
+        if not return_number:
+            return line_of_code
 
     def is_blocky(self, line_of_code):
-        return any([line_of_code.startswith(keyword) for keyword in self.block_keywords]) and line_of_code.endswith(':')
-
+        return any(
+            [line_of_code.startswith(keyword) for keyword in self.block_keywords]
+        ) and line_of_code.endswith(":")
 
     def is_else(self, line_of_code):
         try:
-            trimmed_line_of_code = line_of_code.replace(' ', '')
-            if trimmed_line_of_code == 'else':
+            trimmed_line_of_code = line_of_code.replace(" ", "")
+            if trimmed_line_of_code == "else:":
                 return True
             return
         except:
             return
-            
+
     def is_return(self, line_of_code):
         try:
             stripped_line_of_code = line_of_code.strip()
-            if stripped_line_of_code.startswith('return '):
+            if stripped_line_of_code.startswith("return "):
                 return True
             return
         except:
-            return 
-
+            return
 
     def is_valid(self, line_of_code):
-        
-        exceptional_keywords = ['else', 'return', 'yield']
-
+        exceptional_keywords = ["else", "return", "yield"]
         try:
             line_of_code = self.remove_identation(line_of_code)
             code.compile_command(line_of_code)
-            return True 
+            return True
         except Exception as bug:
             if self.is_else(line_of_code) or self.is_return(line_of_code):
                 return True
             return False
 
     def is_eval(self, line_of_code, variables):
-        restricted = ['command', 'self', 'specifics']
+        restricted = ["command", "self", "specifics"]
         try:
             for var, value in variables.items():
-                if all(var!=r_var for r_var in restricted):
-                    assign_expression = '''{}={}'''.format(var, value)
-                    eval(compile(assign_expression, '<string>', 'exec'))
-            
-            output = eval(compile(line_of_code, '<string>', 'eval'))
-            if not line_of_code.startswith('print'):
+                if all(var != r_var for r_var in restricted):
+                    assign_expression = """{}={}""".format(var, value)
+                    eval(compile(assign_expression, "<string>", "exec"))
+
+            output = eval(compile(line_of_code, "<string>", "eval"))
+            if not line_of_code.startswith("print"):
                 return output
-            return True 
+            return True
         except Exception as bug:
-            print(bug)
-            print('mmh')
+            # print(bug)
             return False
 
     def read_user_input(self):
@@ -87,8 +90,14 @@ class PySwahili_Repl:
                     while True:
                         command = input("...")
                         if command:
-                            english_command = self.translator.convert_to_english(command)
-                            if self.is_valid(english_command):        
+                            space_count = self.remove_identation(
+                                command, return_number=True
+                            )
+                            english_command = self.translator.convert_to_english(
+                                command
+                            )
+                            english_command = (space_count * "\t") + english_command
+                            if self.is_valid(english_command):
                                 user_input = user_input + "\n" + english_command
                                 continue
                         break
@@ -101,7 +110,9 @@ class PySwahili_Repl:
     @staticmethod
     def load_system_specification():
         specification = platform.uname()
-        specification = 'Pyswahili 0.0.1 on {} \nBy @KalebuJordan'.format(specification.system)
+        specification = "Pyswahili 0.0.1 on {} \nBy @KalebuJordan".format(
+            specification.system
+        )
         return specification
 
     def repl(self):
@@ -114,17 +125,18 @@ class PySwahili_Repl:
                     if not self.newline in command:
                         evaluated = self.is_eval(command, locals())
                         if evaluated:
-                            if evaluated !=True:
+                            if evaluated != True:
                                 print(evaluated)
                             continue
-                    eval(compile(command, '<string>', 'exec'))
+                    eval(compile(command, "<string>", "exec"))
                     continue
             except KeyboardInterrupt:
                 sys.exit()
-            
+
             except Exception as bug:
                 print(bug)
                 continue
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     PySwahili_Repl().repl()

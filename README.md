@@ -29,6 +29,7 @@ It might require admistrator priveledge to install so use **sudo** during the in
 
 ```bash 
 $ git clone https://github.com/Kalebu/pyswahili
+$ cd pyswahili
 $ sudo pip3 install -e pyswahili
 ```
 
@@ -65,13 +66,16 @@ just as illustrated in the example below.
 >>> a + 89
 101
 >>> andika('umri wako ni', a)
-umri wako is 12
+umri wako ni 12
+>>> a = a + 13
+>>> a
+25
 >>> kama a%2==0:
-...     andika(a, ' ni namba shufwa')
+...     andika(a, 'ni namba shufwa')
 ...zaidi:
-...     andika(a, ' ni namba witiri')
+...     andika(a,'ni namba witiri')
 ...
-12  is andmba shufwa
+25 ni namba witiri
 ```
 
 
@@ -79,12 +83,14 @@ umri wako is 12
 
 
 ```python
-
-
+>>> kundi jumla(a, b):
+...     rudisha a + b 
+...
+>>> andika(jumla(20, 21))
+41
+>>> andika(jumla('hello ', '2021'))
+hello 2021
 ```
-
-If you're looking carefully the word *namba* changed to *andmba* this due to pyswahili accidentally replaced *na* with *and*, 
-so still it's not perfect perhaps the basic feature are working properly.
 
 
 ## SCRIPT MODE

@@ -40,7 +40,6 @@ class PySwahili(object):
             swahili_python_code = self.load_python_code()
             if swahili_python_code:
                 english_python_code = self.convert_to_english(swahili_python_code)
-                print(english_python_code)
                 exec(english_python_code)
         except Exception as bug:
             print(bug)
