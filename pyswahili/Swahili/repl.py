@@ -2,6 +2,7 @@ import json
 import sys
 import code
 import platform
+import datetime
 from Swahili.swahili_node import PySwahili
 
 
@@ -12,6 +13,19 @@ class PySwahili_Repl:
         self.console = code.InteractiveConsole()
         self.intepreter = code.InteractiveInterpreter()
         self.newline = "\n"
+
+    @property
+    def logo(self):
+        return r"""       
+                 _____                         _     _ _ _ 
+                |  __ \                       | |   (_) (_)
+                | |__) |   _ _____      ____ _| |__  _| |_ 
+                |  ___/ | | / __\ \ /\ / / _` | '_ \| | | |
+                | |   | |_| \__ \\ V  V / (_| | | | | | | |
+                |_|    \__, |___/ \_/\_/ \__,_|_| |_|_|_|_|
+                        __/ |                              
+                        |___/                               
+            """
 
     @staticmethod
     def remove_identation(line_of_code, return_number=False):
@@ -82,7 +96,7 @@ class PySwahili_Repl:
     def read_user_input(self):
         try:
             user_input = ""
-            command = input(">>> ")
+            command = input("-> ")
             english_command = self.translator.convert_to_english(command)
             if self.is_valid(english_command):
                 user_input = english_command
@@ -107,17 +121,14 @@ class PySwahili_Repl:
         except Exception as bug:
             print(bug)
 
-    @staticmethod
-    def load_system_specification():
+    @property
+    def load_system_specification(self):
         specification = platform.uname()
-        specification = "Pyswahili 0.0.1 on {} \nBy @KalebuJordan".format(
-            specification.system
-        )
+        now = datetime.datetime.now().strftime("%A %d, %B %Y")
+        specification = "Pyswahili 0.0.1 on {} | {}".format(specification.system, now)
         return specification
 
     def repl(self):
-        specifics = self.load_system_specification()
-        print(specifics)
         while True:
             try:
                 command = self.read_user_input()
