@@ -1,23 +1,23 @@
 dictionary = { "keywords": {
                 "tupu": "None",
                 "Kweli": "True",
-                "SioKweli": "False",
+                "SiKweli": "False",     #semantical correction
                 "vunja": "break",
                 "endelea": "continue",
                 "rudisha": "return",
                 "ingiza": "input",
                 "kama":"if",
-                "piakama": "elif",
+                "pia": "elif",          #as long as it makes sense semantical translation does not matter
                 "ikiwa": "for",
                 "katiya":"range",
                 "imo": "in",
                 "wakati": "while",
                 "andika":"print",
                 "zaidi": "else",
-                "kundi": "def",
+                "njia": "def",          #njia is a more relevant keyword to functions/method
                 "pamoja" : "with",
                 "darasa": "class", 
-                "ondoa": "del", 
+                "futa": "del",          #futa is a lot simple to catch with and is commonly used than ondoa 
                 "kutoka":"from", 
                 "sio":"not", 
                 "ni": "is",
@@ -27,18 +27,18 @@ dictionary = { "keywords": {
                 "boksi":"list", 
                 "kamusi":"dict", 
                 "jaribu":"try", 
-                "endapo":"except"
+                "ila":"except"          #ila is a lot simple to catch with and most relevant translation of except
     }, 
 
     "block_keywords": {
       "kama":"if", 
-      "kamapia": "elif",
+      "pia": "elif",                    #reference line 10
       "zaidi":"else", 
       "wakati":"while",
       "ikiwa":"for", 
-      "kundi": "def", 
+      "njia": "def",                    #reference line 17
       "pamoja":"with",
-      "endapo":"except"  
+      "ila":"except"                    #reference line 30
     }
 
 }
