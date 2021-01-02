@@ -2,12 +2,12 @@
 A programming language to built on top of Python to easily allow swahili speakers to get started with programming without ever knowing english
 
 
-**pyswahili** is not a completely independent language but more of a swahili version of **python language**, syntax and language grammer is 
+**pyswahili** is not a completely independent language but more of a swahili version of **python language**, syntax and language grammar is 
 equivalent to python one with only change of **keywords** from english to swahili. 
 
 
 ## pyswahili Transpiler
-Transpiler(Pyswahili) is for converting the the swahili version of python to english version so as it can be intepreted by the python Intepreter
+Transpiler(Pyswahili) is for converting the the swahili version of python to english version so that it can be intepreted by the python Intepreter
 
 ## extension ?
 
@@ -15,14 +15,14 @@ There is no official extension for pyswahili, so for now **.py** is fine.
 
 ## Repl vs Script
 
-Similar to Python, Pyswahili supports both mode the Read-evaluate-print(**Repl**) loop and Script mode, 
-Repl enable you to interactively execute pyswahili code line by line without requiring writing a complete program while on other side **Script mode** require you 
+Similar to Python, Pyswahili supports both modes; the Read-evaluate-print(**Repl**) loop and Script mode, 
+Repl enable you to interactively execute pyswahili code line by line without requiring writing a complete program while on other side **Script mode** requires you 
 to write your Pyswahili code on a file and run it as whole.
 
 ## Getting started 
 
 To get started using Pyswahili you might need to either **clone** or **manually download** the repository 
-and then to using pip command to install the package just as shown below.
+and then use pip command to install the package just as shown below.
 
 ### Linux users 
 It might require admistrator priveledge to install so use **sudo** during the installation.
@@ -35,7 +35,7 @@ $ sudo pip3 install -e pyswahili
 
 
 ### Window Users
-If you're Window user I would recommed running command prompt(cmd) with admistrator priveledge during the installation.
+If you're a Windows user, I would recommed running command prompt(cmd) with admistrator priveledge during the installation.
 
 ```powershell
 $ git clone https://github.com/Kalebu/pyswahili
@@ -44,7 +44,7 @@ $ pip install -e pyswahili
 ```
 
 ## REPL MODE
-Now that that the pyswahili package is installed, now we can start playing with it, to invove repl jus run **pyswahili** without any argument 
+Now that the pyswahili package is installed, we can start playing with it, To involve repl just run **pyswahili** without any argument 
 just as shown below;
 
 ```bash       
@@ -151,9 +151,9 @@ Namba yoyote : 8
 
 ## SUPPORTED KEYWORDS 
 
-If you want to see all the supported keywords by pyswahili you see all of them by viewing 
-this [Pyswahili supported keywords](https://github.com/Kalebu/pyswahili/blob/main/pyswahili/Swahili/sw_to_en.py),
-Keywords are not final so whenever you see a need for a keyword change feel free to reach me directly.
+If you want to see all the supported keywords in pyswahili, you can view all of them by visiting 
+[Pyswahili supported keywords](https://github.com/Kalebu/pyswahili/blob/main/pyswahili/Swahili/sw_to_en.py),
+Keywords are not final, so whenever you see a need for a keyword change feel free to reach me directly.
 
 
 ## To Do 
@@ -169,8 +169,8 @@ Keywords are not final so whenever you see a need for a keyword change feel free
 
 ### Ensuring Keywords are replaced
 
-The current approach just replace the keywords in the whole python source code string, but the methods is error-prone 
-since it also replaces user defined strings therefore we have to find a way whereby only keywords are being replaced, 
+The current approach is just to replace the keywords in the whole python source code string, but the methods are error-prone 
+since they also replace user defined strings, so we have to find a way whereby only keywords are being replaced. 
 
 This can be achieved by using Python builtin **lexical scanner** tokenize for python source code, which is capable of breaking the 
 python source code into pieces strings with their **type** (NAME, OP, NUMBER, NEWLINE, IDENT) and so on.
@@ -181,7 +181,7 @@ More documentation abouut tokenize can be found on its [official documentation](
 
 If you found this repository useful, give it a star 
 
-You can also keep in touch with on [Twitter](https://twitter.com/j_kalebu).
+You can also keep in touch with me on [Twitter](https://twitter.com/j_kalebu).
 
 
 ## Bug bounty?
