@@ -125,7 +125,7 @@ class PySwahili_Repl:
     def load_system_specification(self):
         specification = platform.uname()
         now = datetime.datetime.now().strftime("%A %d, %B %Y")
-        specification = "Pyswahili 0.0.1 on {} | {}".format(specification.system, now)
+        specification = "Pyswahili 1.0 on {} | {}".format(specification.system, now)
         return specification
 
     def repl(self):

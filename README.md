@@ -58,7 +58,7 @@ just as shown below;
                         |___/                               
             
 author: Kalebu Jordan (github.com/kalebu)
-Pyswahili 0.0.1 on Linux | Saturday 02, January 2021
+Pyswahili 1.0 on Linux | Saturday 02, January 2021
 -> 
 ```
 
