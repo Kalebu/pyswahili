@@ -91,15 +91,30 @@ umri wako ni 12
 
 
 ```python
->>> njia jumla(a, b):
+-> njia jumla(a, b):
 ...     rudisha a + b 
 ...
->>> andika(jumla(20, 21))
+-> andika(jumla(20, 21))
 41
->>> andika(jumla('hello ', '2021'))
+-> andika(jumla('hello ', '2021'))
 hello 2021
 ```
 
+## Loops Pyswahili
+
+- while loop 
+for while loop, we use the swahili keyword **wakati** instead of **while** but the syntax stays the same 
+to break the loop, use keyword **vunja** 
+```python
+-> x = 3   
+-> wakati x>0:
+...     andika(x*10)
+...     x = x - 1
+...
+30
+20
+10
+```
 
 ## SCRIPT MODE
 In script mode, you're supposed to have write your pyswahili code in a file and then pyswahili will run it as whole, 
