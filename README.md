@@ -47,11 +47,19 @@ $ pip install -e pyswahili
 Now that that the pyswahili package is installed, now we can start playing with it, to invove repl jus run **pyswahili** without any argument 
 just as shown below;
 
-```bash
-$-> pyswahili
-Pyswahili 0.0.1 on Linux 
-By @KalebuJordan
->>> 
+```bash       
+                 _____                         _     _ _ _ 
+                |  __ \                       | |   (_) (_)
+                | |__) |   _ _____      ____ _| |__  _| |_ 
+                |  ___/ | | / __\ \ /\ / / _` | '_ \| | | |
+                | |   | |_| \__ \\ V  V / (_| | | | | | | |
+                |_|    \__, |___/ \_/\_/ \__,_|_| |_|_|_|_|
+                        __/ |                              
+                        |___/                               
+            
+author: Kalebu Jordan (github.com/kalebu)
+Pyswahili 0.0.1 on Linux | Saturday 02, January 2021
+-> 
 ```
 
 ### Usage
@@ -60,17 +68,17 @@ The Pyswahili REPL is used the same wise as the normal python repl, supporting b
 just as illustrated in the example below.
 
 ```python
->>> a = 12
->>> a
+-> a = 12
+-> a
 12
->>> a + 89
+-> a + 89
 101
->>> andika('umri wako ni', a)
+-> andika('umri wako ni', a)
 umri wako ni 12
->>> a = a + 13
->>> a
+-> a = a + 13
+-> a
 25
->>> kama a%2==0:
+-> kama a%2==0:
 ...     andika(a, 'ni namba shufwa')
 ...zaidi:
 ...     andika(a,'ni namba witiri')
@@ -83,7 +91,7 @@ umri wako ni 12
 
 
 ```python
->>> kundi jumla(a, b):
+>>> njia jumla(a, b):
 ...     rudisha a + b 
 ...
 >>> andika(jumla(20, 21))
@@ -136,11 +144,13 @@ Keywords are not final so whenever you see a need for a keyword change feel free
 ## To Do 
 
 
-- [x] Making sure only keywords are replaced 
-- [ ] Improving documentation 
+- [x] Starter string based logo
+- [x] Making sure only keywords are replaced
+- [ ] Improving the choice of keywords 
+- [ ] adding documentation + examples  
 - [ ] fixing REPL bugs
-- [ ] Starter string based logo
 - [ ] Supporting the Module structure
+- [ ] Publishing Version 1.0 to the PyPI
 
 ### Ensuring Keywords are replaced
 
