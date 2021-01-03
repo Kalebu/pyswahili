@@ -177,6 +177,12 @@ python source code into pieces strings with their **type** (NAME, OP, NUMBER, NE
 
 More documentation abouut tokenize can be found on its [official documentation](https://docs.python.org/3/library/tokenize.html)
 
+Contributing
+------------
+
+Wanna contribute ? then please [contributing.md](https://github.com/Kalebu/pyswahili/blob/main/CONTRIBUTING.md) to see how
+
+
 # Give it a star 
 
 If you found this repository useful, give it a star 
