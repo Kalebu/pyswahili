@@ -33,7 +33,7 @@ dictionary = {
     "block_keywords": {
         "kama": "if",
         "pia": "elif",  # reference line 10
-        "vinginevyo": "else",
+        "zaidi": "else",
         "wakati": "while",
         "ikiwa": "for",
         "njia": "def",  # reference line 17
