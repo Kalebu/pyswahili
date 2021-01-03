@@ -13,7 +13,7 @@ dictionary = { "keywords": {
                 "imo": "in",
                 "wakati": "while",
                 "andika":"print",
-                "zaidi": "else",
+                "vinginevyo": "else",
                 "njia": "def",          #njia is a more relevant keyword to functions/method
                 "pamoja" : "with",
                 "darasa": "class", 
@@ -33,7 +33,7 @@ dictionary = { "keywords": {
     "block_keywords": {
       "kama":"if", 
       "pia": "elif",                    #reference line 10
-      "zaidi":"else", 
+      "vinginevyo":"else", 
       "wakati":"while",
       "ikiwa":"for", 
       "njia": "def",                    #reference line 17
