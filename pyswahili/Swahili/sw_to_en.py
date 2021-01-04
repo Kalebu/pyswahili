@@ -25,7 +25,7 @@ dictionary = {
         "au": "or",
         "na": "and",
         "neno": "str",
-        "boksi": "list",
+        "orodha": "list",
         "kamusi": "dict",
         "jaribu": "try",
         "ila": "except",  # ila is a lot simple to catch with and most relevant translation of except
