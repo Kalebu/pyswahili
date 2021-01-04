@@ -1,8 +1,10 @@
 import json
 import sys
 import code
+import ast
 import platform
 import datetime
+import traceback
 from Swahili.swahili_node import PySwahili
 
 
@@ -66,15 +68,40 @@ class PySwahili_Repl:
         except:
             return
 
-    def is_valid(self, line_of_code):
-        exceptional_keywords = ["else", "return", "yield"]
+    def is_compilable(self, line_of_code):
         try:
             line_of_code = self.remove_identation(line_of_code)
-            code.compile_command(line_of_code)
+            code.compile_command(line_of_code, "<string>", "exec")
             return True
         except Exception as bug:
+            # print(bug)
             if self.is_else(line_of_code) or self.is_return(line_of_code):
                 return True
+            return False
+
+    def is_parsable(self, line_of_code):
+        try:
+            line_of_code = self.remove_identation(line_of_code)
+            if ast.parse(line_of_code):
+                return True
+        except Exception as bug:
+            # print(bug)
+            return False
+
+    def is_valid(self, line_of_code):
+        try:
+            if self.is_compilable(line_of_code):
+                print("code is compilable")
+                return True
+
+            if self.is_parsable(line_of_code):
+                print("code is parsable")
+                return True
+
+            print("code is not valid")
+            return False
+        except Exception as bug:
+            traceback.print_exc()
             return False
 
     def is_eval(self, line_of_code, variables):
@@ -139,7 +166,8 @@ class PySwahili_Repl:
                             if evaluated != True:
                                 print(evaluated)
                             continue
-                    eval(compile(command, "<string>", "exec"))
+                    print(command)
+                    exec(command, globals())
                     continue
             except KeyboardInterrupt:
                 sys.exit()

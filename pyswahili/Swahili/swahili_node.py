@@ -7,7 +7,7 @@ from Swahili.sw_to_en import dictionary
 
 
 class PySwahili(object):
-    def __init__(self, filename=None):
+    def __init__(self, filename=""):
         if filename:
             self.swahili_code = filename
         self.sw_to_en = dictionary
