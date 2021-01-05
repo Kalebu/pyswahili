@@ -1,5 +1,5 @@
 # pyswahili
-A programming language to built on top of Python to easily allow swahili speakers to get started with programming without ever knowing english
+A programming language built over Python to easily allow swahili speakers to get started with programming without ever knowing english
 
 
 **pyswahili** is not a completely independent language but more of a swahili version of **python language**, syntax and language grammar is 
@@ -7,7 +7,7 @@ equivalent to python one with only change of **keywords** from english to swahil
 
 
 ## pyswahili Transpiler
-Transpiler(Pyswahili) is for converting the the swahili version of python to english version so that it can be intepreted by the python Intepreter
+Transpiler(Pyswahili) is for converting the swahili version of python to english version so that it can be intepreted by the python Intepreter
 
 ## extension ?
 
