@@ -20,7 +20,7 @@ dictionary = {
         "darasa": "class",
         "futa": "del",  # futa is a lot simple to catch with and is commonly used than ondoa
         "kutoka": "from",
-        "ingiza": "import"
+        "ingiza": "import",
         "sio": "not",
         "ni": "is",
         "au": "or",
@@ -30,8 +30,8 @@ dictionary = {
         "kamusi": "dict",
         "jaribu": "try",
         "ila": "except",  # ila is a lot simple to catch with and most relevant translation of except
-        "mwisho": "fianlly" #can be even mwishowe 
-        "kama": "as" #we have to put ikiwa so as to give keyword "as" as kama 
+        "mwisho": "fianlly", #can be even mwishowe 
+        "kama": "as", #we have to put ikiwa so as to give keyword "as" as kama 
     },
     "block_keywords": {
         "ikiwa": "if", # we have to put "ikiwa" so as to give keyword "as" as kama 
