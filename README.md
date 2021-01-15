@@ -16,7 +16,7 @@ There is no official extension for pyswahili, so for now **.py** is fine.
 ## Repl vs Script
 
 Similar to Python, Pyswahili supports both modes; the Read-evaluate-print(**Repl**) loop and Script mode, 
-Repl enable you to interactively execute pyswahili code line by line without requiring writing a complete program while on other side **Script mode** requires you 
+Repl enable you to interactively execute pyswahili code line by line without requiring to write a complete program while on other side **Script mode** requires you 
 to write your Pyswahili code on a file and run it as whole.
 
 ## Getting started 
