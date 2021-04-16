@@ -1,6 +1,7 @@
 # pyswahili
 A programming language built over Python to easily allow swahili speakers to get started with programming without ever knowing english
 
+[![Become a patron](pictures/become_a_patron_button.png)](https://www.patreon.com/kalebujordan)
 
 **pyswahili** is not a completely independent language but more of a swahili version of **python language**, syntax and language grammar is 
 equivalent to python one with only change of **keywords** from english to swahili. 
