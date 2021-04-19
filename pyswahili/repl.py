@@ -1,19 +1,18 @@
 import json
 import sys
-import code
 import ast
+import code
 import platform
 import datetime
 import traceback
-from Swahili.swahili_node import PySwahili
+from pyswahili.swahili_node import PySwahili
 
 
 class PySwahili_Repl:
     def __init__(self):
         self.translator = PySwahili()
-        self.block_keywords = list(self.translator.sw_to_en["block_keywords"].values())
-        self.console = code.InteractiveConsole()
-        self.intepreter = code.InteractiveInterpreter()
+        self.block_keywords = list(
+            self.translator.sw_to_en["block_keywords"].values())
         self.newline = "\n"
 
     @property
@@ -47,7 +46,8 @@ class PySwahili_Repl:
 
     def is_blocky(self, line_of_code):
         return any(
-            [line_of_code.startswith(keyword) for keyword in self.block_keywords]
+            [line_of_code.startswith(keyword)
+             for keyword in self.block_keywords]
         ) and line_of_code.endswith(":")
 
     def is_else(self, line_of_code):
@@ -91,14 +91,14 @@ class PySwahili_Repl:
     def is_valid(self, line_of_code):
         try:
             if self.is_compilable(line_of_code):
-                print("code is compilable")
+                # print("code is compilable")
                 return True
 
             if self.is_parsable(line_of_code):
-                print("code is parsable")
+                # print("code is parsable")
                 return True
 
-            print("code is not valid")
+            # print("code is not valid")
             return False
         except Exception as bug:
             traceback.print_exc()
@@ -123,7 +123,7 @@ class PySwahili_Repl:
     def read_user_input(self):
         try:
             user_input = ""
-            command = input("-> ")
+            command = input(">>> ")
             english_command = self.translator.convert_to_english(command)
             if self.is_valid(english_command):
                 user_input = english_command
@@ -137,7 +137,8 @@ class PySwahili_Repl:
                             english_command = self.translator.convert_to_english(
                                 command
                             )
-                            english_command = (space_count * "\t") + english_command
+                            english_command = (
+                                space_count * "\t") + english_command
                             if self.is_valid(english_command):
                                 user_input = user_input + "\n" + english_command
                                 continue
@@ -152,7 +153,8 @@ class PySwahili_Repl:
     def load_system_specification(self):
         specification = platform.uname()
         now = datetime.datetime.now().strftime("%A %d, %B %Y")
-        specification = "Pyswahili 1.0 on {} | {}".format(specification.system, now)
+        specification = "Pyswahili 1.0 on {} | {}".format(
+            specification.system, now)
         return specification
 
     def repl(self):
@@ -166,7 +168,7 @@ class PySwahili_Repl:
                             if evaluated != True:
                                 print(evaluated)
                             continue
-                    print(command)
+                    # print(command)
                     exec(command, globals())
                     continue
             except KeyboardInterrupt:

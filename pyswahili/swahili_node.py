@@ -3,7 +3,7 @@ import os
 import sys
 import json
 import tokenize
-from Swahili.sw_to_en import dictionary
+from pyswahili.sw_to_en import dictionary
 
 
 class PySwahili(object):
@@ -17,7 +17,8 @@ class PySwahili(object):
             if os.path.isfile(self.swahili_code):
                 with open(self.swahili_code, "r") as pyswahili_code:
                     return pyswahili_code.read()
-            raise FileNotFoundError("Can't find a path to {}".format(self.swahili_code))
+            raise FileNotFoundError(
+                "Can't find a path to {}".format(self.swahili_code))
         except Exception as bug:
             print(bug)
             return ""
@@ -47,7 +48,8 @@ class PySwahili(object):
         try:
             swahili_python_code = self.load_python_code()
             if swahili_python_code:
-                english_python_code = self.convert_to_english(swahili_python_code)
+                english_python_code = self.convert_to_english(
+                    swahili_python_code)
                 exec(english_python_code)
         except Exception as bug:
             print(bug)
