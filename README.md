@@ -1,6 +1,13 @@
 # pyswahili
 A programming language built over Python to easily allow swahili speakers to get started with programming without ever knowing english
 
+[![Releases](https://badgen.net/github/releases/kalebu/pyswahili)](https://github.com/Kalebu/pyswahili)
+[![Downloads](https://pepy.tech/badge/pyswahili)](https://pepy.tech/project/pyswahili)
+[![Downloads](https://pepy.tech/badge/pyswahili/month)](https://pepy.tech/project/pyswahili)
+[![Downloads](https://pepy.tech/badge/pyswahili/week)](https://pepy.tech/project/pyswahili)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+
 [![Become a patron](pictures/become_a_patron_button.png)](https://www.patreon.com/kalebujordan)
 
 **pyswahili** is not a completely independent language but more of a swahili version of **python language**, syntax and language grammar is 
@@ -24,6 +31,10 @@ to write your Pyswahili code on a file and run it as whole.
 
 To get started using Pyswahili you might need to either **clone** or **manually download** the repository 
 and then use pip command to install the package just as shown below.
+
+```bash
+pip install pyswahili
+```
 
 ### Linux users 
 It might require admistrator priveledge to install so use **sudo** during the installation.

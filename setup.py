@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name="pyswahili",
-    version="0.1.0",
+    version="0.1.2",
     description="""
     Python package for briding python english keywords 
     with swahili one to allow swahili speakers to learn the basics of coding 
@@ -30,9 +30,8 @@ setup(
             "pyswahili = pyswahili.__main__:main"
         ]
     },
-    python_requires=">=3.6",
     classifiers=[
-        "Development Status :: 1 - Alpha",
+        "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
         "Topic :: Software Development :: Build Tools",
         "License :: OSI Approved :: MIT License",
