@@ -1,0 +1,3 @@
+[console_scripts]
+pyswahili = pyswahili.__main__:main
+

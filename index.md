@@ -31,18 +31,19 @@ pip install pyswahili
 It might require admistrator priveledge to install so use **sudo** during the installation.
 
 ```bash 
-$ git clone https://github.com/Kalebu/pyswahili
-$ cd pyswahili
-$ sudo pip3 install -e pyswahili
+git clone https://github.com/Kalebu/pyswahili
+cd pyswahili
+sudo pip3 install -e pyswahili
 ```
 
 ### Window Users
+
 If you're a Windows user, I would recommed running command prompt(cmd) with admistrator priveledge during the installation.
 
 ```powershell
-$ git clone https://github.com/Kalebu/pyswahili
-$ cd pyswahili
-$ pip install -e pyswahili
+git clone https://github.com/Kalebu/pyswahili
+cd pyswahili
+pip install -e pyswahili
 ```
 
 ## REPL MODE
@@ -66,8 +67,7 @@ Pyswahili 1.0 on Linux | Saturday 02, January 2021
 
 ### Usage
 
-The Pyswahili REPL is used the same wise as the normal python repl, supporting basic statements to complex logic with block statements written in swahili, 
-just as illustrated in the example below.
+The Pyswahili REPL is used the same wise as the normal python repl, supporting basic statements to complex logic with block statements written in swahili, just as illustrated in the example below.
 
 ```python
 -> a = 12
@@ -91,7 +91,6 @@ umri wako ni 12
 
 #### Functions in pyswahili
 
-
 ```python
 -> njia jumla(a, b):
 ...     rudisha a + b 
@@ -105,8 +104,8 @@ hello 2021
 ## Loops Pyswahili
 
 - while loop 
-for while loop, we use the swahili keyword **wakati** instead of **while** but the syntax stays the same 
-to break the loop, use keyword **vunja** 
+for while loop, we use the swahili keyword **wakati** instead of **while** but the syntax stays the same to break the loop, use keyword **vunja**.
+
 ```python
 -> x = 3   
 -> wakati x>0:
@@ -120,8 +119,7 @@ to break the loop, use keyword **vunja**
 
 ## SCRIPT MODE
 
-In script mode, you're supposed to have write your pyswahili code in a file and then pyswahili will run it as whole, 
-your code should follow pyswahili syntax (python one) for it to be evaluated.
+In script mode, you're supposed to have write your pyswahili code in a file and then pyswahili will run it as whole, your code should follow pyswahili syntax (python one) for it to be evaluated.
 
 - hello.py
 
@@ -155,9 +153,9 @@ Namba yoyote : 8
 ## SUPPORTED KEYWORDS 
 
 If you want to see all the supported keywords in pyswahili, you can view all of them by visiting 
-[Pyswahili supported keywords](https://github.com/Kalebu/pyswahili/blob/main/pyswahili/Swahili/sw_to_en.py),
-Keywords are not final, so whenever you see a need for a keyword change feel free to reach me directly.
+[Pyswahili supported keywords](https://github.com/Kalebu/pyswahili/blob/main/pyswahili/Swahili/sw_to_en.py)
 
+Note: Keywords are not final, so whenever you see a need for a keyword change feel free to reach me directly.
 
 ## To Do 
 
@@ -171,11 +169,9 @@ Keywords are not final, so whenever you see a need for a keyword change feel fre
 
 ### Ensuring Keywords are replaced
 
-The current approach is just to replace the keywords in the whole python source code string, but the methods are error-prone 
-since they also replace user defined strings, so we have to find a way whereby only keywords are being replaced. 
+The current approach is just to replace the keywords in the whole python source code string, but the methods are error-prone since they also replace user defined strings, so we have to find a way whereby only keywords are being replaced. 
 
-This can be achieved by using Python builtin **lexical scanner** tokenize for python source code, which is capable of breaking the 
-python source code into pieces strings with their **type** (NAME, OP, NUMBER, NEWLINE, IDENT) and so on.
+This can be achieved by using Python builtin **lexical scanner** tokenize for python source code, which is capable of breaking the python source code into pieces strings with their **type** (NAME, OP, NUMBER, NEWLINE, IDENT) and so on.
 
 More documentation abouut tokenize can be found on its [official documentation](https://docs.python.org/3/library/tokenize.html)
 
@@ -183,8 +179,7 @@ More documentation abouut tokenize can be found on its [official documentation](
 
 Wanna contribute ? then please [contributing.md](https://github.com/Kalebu/pyswahili/blob/main/CONTRIBUTING.md) to see how
 
-
 ## Bug bounty?
 
 If you encounter **issue** with the usage of the package, feel free raise an **issue** so as 
-we can fix it as soon as possible(ASAP) or just reach me directly through [email](isaackeinstein@gmail.com)
+we can fix it as soon as possible(ASAP) or just reach me directly through isaackeinstein(at)gmail.com
