@@ -164,7 +164,7 @@ Namba yoyote : 8
 ## SUPPORTED KEYWORDS 
 
 If you want to see all the supported keywords in pyswahili, you can view all of them by visiting 
-[Pyswahili supported keywords](https://github.com/Kalebu/pyswahili/blob/main/pyswahili/Swahili/sw_to_en.py),
+[Pyswahili supported keywords](https://github.com/Kalebu/pyswahili/blob/main/pyswahili/sw_to_en.py),
 Keywords are not final, so whenever you see a need for a keyword change feel free to reach me directly.
 
 

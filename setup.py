@@ -4,12 +4,12 @@ from setuptools import setup
 # read the contents of your description file
 
 this_directory = path.abspath(path.dirname(__file__))
-with open(path.join(this_directory, 'description.md'), encoding='utf-8') as f:
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
     name="pyswahili",
-    version="0.1.3",
+    version="0.1.4",
     description="""
     Python package for briding python english keywords 
     with swahili one to allow swahili speakers to learn the basics of coding 
